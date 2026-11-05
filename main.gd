@@ -1324,8 +1324,8 @@ func _cshot_script() -> void:
 		var kinds: Array = ["slime", "bat", "golem", "wyvern", "eye"] if game_mode == "hunt" else ["scout", "gunship", "striker", "ace"]
 		var P: Vector3 = drone.position
 		for i in kinds.size():
-			var x := (i - (kinds.size() - 1) * 0.5) * 55.0
-			var z := P.z - 130.0 - i * 6.0
+			var x := (i - (kinds.size() - 1) * 0.5) * 38.0
+			var z := P.z - 80.0 - i * 4.0
 			var gy: float = terrain.ground(P.x + x, z)
 			var y := gy if kinds[i] in ["slime", "golem"] else P.y + 6.0 + i * 3.0
 			combat.spawn_at(kinds[i], Vector3(P.x + x, y, z))
